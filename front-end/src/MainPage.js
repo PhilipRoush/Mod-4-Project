@@ -29,10 +29,10 @@ class MainPage extends Component {
         return (
             <div className="MainPage-Wrapper">
                 <Navbar />
+                <SearchResultBar />
                 <HeaderContainer popularMovies={this.state.popularMovies}/>
                 <h4>Trending</h4>
                 <PopularMoviesContainer popularMovies={this.state.popularMovies} />
-                <SearchResultBar />
                 <FavoriteBar />
                 <Footer />
             </div>
