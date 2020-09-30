@@ -18,27 +18,28 @@ class MainPage extends Component {
         this.fetchPopular()
     }
 
-    fetchPopular() {
+    fetchPopular = () => {
         fetch(popularMoviesUrl)
-        .then(res => res.json())
-        .then(popularMovies => this.setState({popularMovies}))
+            .then(res => res.json())
+            .then(popularMovies => this.setState({ popularMovies: popularMovies.results }))
     }
 
-    state = {  }
-    render() { 
-        return ( 
+
+    render() {
+        return (
             <div className="MainPage-Wrapper">
                 <Navbar />
-                <HeaderContainer />
-                <PopularMoviesContainer popularMovies={this.state.popularMovies}/>
+                <HeaderContainer popularMovies={this.state.popularMovies}/>
+                <h4>Trending</h4>
+                <PopularMoviesContainer popularMovies={this.state.popularMovies} />
                 <SearchResultBar />
                 <FavoriteBar />
                 <Footer />
             </div>
-         );
+        );
     }
 
 
 }
- 
+
 export default MainPage;

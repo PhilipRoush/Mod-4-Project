@@ -4,7 +4,9 @@ class HeaderContainer extends Component {
     state = {  }
     render() { 
         return ( 
-            <h1>Header</h1>
+            <div>
+                {/* {this.props.popularMovies.map(movies =>  console.log(movies.backdrop_path)} */}
+            </div>
          );
     }
 }

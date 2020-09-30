@@ -4,19 +4,19 @@ import {Link} from 'react-router-dom'
 // https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
 
 const MovieCard = (props) => {
-    let fetchID;
-    props.movieObject.movieAPI_ID ? fetchID = props.movieObject.movieAPI_ID : fetchID = props.movieObject.id
+    // let fetchID;
+    // props.movieObject.movieAPI_ID ? fetchID = props.movieObject.movieAPI_ID : fetchID = props.movieObject.id
 
-    let imageUrl = `https://image.tmdb.org/t/p/w500${props.movieObject.poster_path}`
+    // let imageUrl = `https://image.tmdb.org/t/p/w500${props.movieObject.poster_path}`
     return (
-      <div className="movie-card-2">
+      <div className="movie-card">
         <div className="movie-image-container">
-          <img className="movie-poster" alt="movie-poster" src={imageUrl}></img>
+          <img className="movie-poster" alt={props.movies.title} src={`https://image.tmdb.org/t/p/w92${props.movies.poster_path}`}></img>
         </div>
 
-        <div className="movie-card-details">
+        {/* <div className="movie-card-details">
           <div className="movie-card-title">
-            <h3>{props.movieObject.title || props.movieObject.original_title}</h3>
+            <h3>{props.movies.title || props.movieObject.original_title}</h3>
           </div>
 
             <button onClick={() =>  props.addToList(props.movieObject)}
@@ -25,12 +25,12 @@ const MovieCard = (props) => {
             </button>
             
             <button className="ui inverted violet basic button justify-btn">
-              <span className="movie-card-links moreInfo">
-                <Link to={`/movies/${fetchID}`}>Details</Link>
-              </span>
-            </button>
+              <span className="movie-card-links moreInfo"> */}
+                {/* <Link to={`/movies/${fetchID}`}>Details</Link> */}
+              {/* </span> */}
+            {/* </button> */}
   
-        </div>
+        {/* </div> */}
       </div>
     )
 
