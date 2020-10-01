@@ -63,10 +63,16 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   }));
+
+ 
   
 
-  export default function Navbar() {
+  const Navbar = (props) => {
     const classes = useStyles();
+
+    let handleChange = (event) => {
+      props.movieSearch(event.target.value)
+    }
   
     return (
       <div className={classes.root}>
@@ -81,13 +87,14 @@ const useStyles = makeStyles((theme) => ({
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              Chris and Phils Movies
+              
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
+                onChange={handleChange}
                 placeholder="Search…"
                 classes={{
                   root: classes.inputRoot,
@@ -101,4 +108,6 @@ const useStyles = makeStyles((theme) => ({
       </div>
     );
   }
+
+  export default Navbar;
   

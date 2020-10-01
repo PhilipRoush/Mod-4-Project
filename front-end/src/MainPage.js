@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
 import HeaderContainer from './containers/HeaderContainer'
-import SearchResultBar from './SearchResultBar'
+import SearchResultBar from './containers/SearchResultBar'
 import FavoriteBar from './FavoriteBar'
 import Footer from './Footer'
 import PopularMoviesContainer from './containers/PopularMoviesContainer'
@@ -11,12 +11,25 @@ const popularMoviesUrl = "https://api.themoviedb.org/3/movie/popular?api_key=d5b
 class MainPage extends Component {
 
     state = {
-        popularMovies: []
+        popularMovies: [],
+        // popularPics: [],
+        searchMovies: []
     }
 
     componentDidMount() {
         this.fetchPopular()
+        // this.fetchSearch()
     }
+
+    // componentWillMount() {
+    //     this.fetchHeaderPopular()
+    // }
+
+    // fetchHeaderPopular = () => {
+    //     fetch(popularMoviesUrl)
+    //         .then(res => res.json())
+    //         .then(popularMovies => this.setState({ popularPics: popularMovies.results }))
+    // }
 
     fetchPopular = () => {
         fetch(popularMoviesUrl)
@@ -24,15 +37,26 @@ class MainPage extends Component {
             .then(popularMovies => this.setState({ popularMovies: popularMovies.results }))
     }
 
+    movieSearch = (movie) => {
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=d5b1a0507451a686fe3ad617dac6002e&language=en-US&query=${movie}&page=1&include_adult=false`)
+            .then(res => res.json())
+            .then(searchMovies => this.setState({searchMovies: searchMovies.results}))
+    }
+
+    showCard = (movie) => {
+        console.log(movie)
+    }
+
 
     render() {
         return (
             <div className="MainPage-Wrapper">
-                <Navbar />
-                <SearchResultBar />
-                <HeaderContainer popularMovies={this.state.popularMovies}/>
+                <Navbar movieSearch={this.movieSearch}/><br></br>
+                <HeaderContainer popularMovies={this.props.popularPics}/>
+                <h4>Search</h4>
+                <SearchResultBar searchMovies={this.state.searchMovies} />
                 <h4>Trending</h4>
-                <PopularMoviesContainer popularMovies={this.state.popularMovies} />
+                <PopularMoviesContainer showCard={this.showCard} popularMovies={this.state.popularMovies} />
                 <FavoriteBar />
                 <Footer />
             </div>
