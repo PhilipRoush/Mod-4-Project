@@ -77,3 +77,12 @@ h1 {
   color: white;
 }
 
+p {
+  color: white;
+}
+
+.movie-image {
+  width: 1200px;
+  height: 550px;
+}
+

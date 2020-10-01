@@ -43,9 +43,9 @@ class MainPage extends Component {
             .then(searchMovies => this.setState({searchMovies: searchMovies.results}))
     }
 
-    showCard = (movie) => {
-        console.log(movie)
-    }
+    // showCard = (movie) => {
+    //     console.log(movie.id)
+    // }
 
 
     render() {
@@ -56,7 +56,7 @@ class MainPage extends Component {
                 <h4>Search</h4>
                 <SearchResultBar searchMovies={this.state.searchMovies} />
                 <h4>Trending</h4>
-                <PopularMoviesContainer showCard={this.showCard} popularMovies={this.state.popularMovies} />
+                <PopularMoviesContainer showCard={this.props.showCard} popularMovies={this.state.popularMovies} />
                 <FavoriteBar />
                 <Footer />
             </div>

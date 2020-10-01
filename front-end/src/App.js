@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import MainPage from './MainPage'
 import Movie from './Movie'
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
+import { Router, Switch, Link, Route } from 'react-router-dom'
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 
 const popularMoviesUrl = "https://api.themoviedb.org/3/movie/popular?api_key=d5b1a0507451a686fe3ad617dac6002e&language=en-US&page=1"
@@ -11,6 +14,7 @@ const popularMoviesUrl = "https://api.themoviedb.org/3/movie/popular?api_key=d5b
 class App extends Component {
   state = {
     popularPics: [],
+    movie: [],
   }
 
   componentWillMount() {
@@ -23,17 +27,22 @@ class App extends Component {
       .then(popularMovies => this.setState({ popularPics: popularMovies.results }))
   }
 
+  showCard = (movie) => {
+    this.setState({movie: movie})
+    history.push('/movie')
+  }
+
 
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router history={history}>
           <Switch>
             <Route path="/movie">
-              <Movie />
+              <Movie movie={this.state.movie}/>
             </Route>
             <Route path="/">
-              <MainPage popularPics={this.state.popularPics} />
+              <MainPage popularPics={this.state.popularPics} showCard={this.showCard}/>
             </Route>
           </Switch>
         </Router>
