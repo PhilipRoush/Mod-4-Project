@@ -1,0 +1,139 @@
+body {
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-position: center center;
+} 
+
+.wrapper {
+  height: 560px;
+  width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   padding:0 2em;
+   border-radius: 5px;
+   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+   color: #ffffff;
+  background: linear-gradient(180deg, rgba(0,5,36,1) 0%, rgba(208,28,17,0.9037990196078431) 51%, rgba(254,253,253,0) 82%);
+}
+
+.form-wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 50px #555;
+  background: linear-gradient(180deg, rgba(0,5,36,1) 10%, rgba(208,28,17,0.9037990196078431) 40%, rgba(254,253,253,0) 82%);
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  width: 100%;
+  color: rgb(246, 249, 249);
+  font-weight: lighter;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+label {
+  font-size: 1.5em;
+  margin-bottom: 0.25em;
+  color: rgb(247, 242, 242);
+  font-weight: lighter;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  padding-left: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, .2);
+}
+
+input::placeholder {
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: rgb(138, 189, 212);
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.75em;
+  display: relative;
+}
+
+.firstName {
+  margin-right: 1%;
+}
+
+.lastName {
+  margin-left: 1%;
+}
+
+.firstName,
+.lastName,
+.email,
+.password {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.firstName,
+.lastName {
+  width: 49%;
+}
+
+.name,
+.password {
+  width: 100%;
+}
+
+.createAccount {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createAccount button {
+  background-color: #383434;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  padding: 8px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+
+.createAccount button:hover {
+  color: #519e8a;
+  background-color: #fff;
+  border: 2px solid #519e8a;
+}
+
+.loginRoute {
+  color: rgb(225, 210, 210);
+  font-weight: lighter;
+  background-color: #383434;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}

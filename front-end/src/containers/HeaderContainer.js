@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 class HeaderContainer extends Component {
-    state = {  }
+   
     render() { 
+       let backdrop = this.props.popularMovies.map(movies =>  movies.backdrop_path)
+       var randomBackdrop = backdrop[Math.floor(Math.random() * backdrop.length)]
         return ( 
             <div>
-                {/* {this.props.popularMovies.map(movies =>  console.log(movies.backdrop_path)} */}
+                <img className="headerImage" src={`https://image.tmdb.org/t/p/original${randomBackdrop}`}></img>
             </div>
          );
     }
