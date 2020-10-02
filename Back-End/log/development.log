@@ -212,3 +212,601 @@ Migrating to CreateReviews (20200925195003)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (4.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-10-02 03:32:55 -0600
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christophertorres/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christophertorres/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.5ms | Allocations: 480)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 2630)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:33:02 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 3.4ms | ActiveRecord: 7.1ms | Allocations: 2513)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:38:38 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"comment"=>"Is this really Mulan?", "review"=>{"comment"=>"Is this really Mulan?"}}
+Completed 200 OK in 1324ms (Views: 0.3ms | ActiveRecord: 65.3ms | Allocations: 896445)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:38:48 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (6.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 6.2ms | Allocations: 825)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-10-02 03:38:48 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/reviews" for ::1 at 2020-10-02 03:38:49 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (22.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 1.7ms | ActiveRecord: 22.5ms | Allocations: 851)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:38:50 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 827)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:40:00 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 823)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:40:01 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 823)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:40:01 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (6.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 6.0ms | Allocations: 823)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:40:01 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 823)
+
+
+Started GET "/reviews/1" for ::1 at 2020-10-02 03:40:15 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `show'
+Completed 404 Not Found in 19ms (ActiveRecord: 4.4ms | Allocations: 2498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:9:in `show'
+Started POST "/reviews" for ::1 at 2020-10-02 03:40:58 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"comment"=>"Is this really Mulan?", "review"=>{"comment"=>"Is this really Mulan?"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1022)
+
+
+  [1m[36mReview Load (4.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/reviews" for ::1 at 2020-10-02 03:45:32 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 1.6ms | Allocations: 2502)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:45:51 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"comment"=>"yoyo", "review"=>{"comment"=>"yoyo"}}
+Completed 200 OK in 143ms (Views: 0.2ms | ActiveRecord: 10.1ms | Allocations: 207315)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:50:34 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"mulan", "user_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"mulan", "user_id"=>nil}}
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1028)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:50:45 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (5.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 5.0ms | Allocations: 825)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:50:45 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 102ms (Views: 101.3ms | ActiveRecord: 0.4ms | Allocations: 831)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:51:34 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"dfgfg", "user_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"dfgfg", "user_id"=>nil}}
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1014)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:52:05 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"dfsdf", "user_id"=>nil, "movie_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"dfsdf", "user_id"=>nil, "movie_id"=>nil}}
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1040)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:52:13 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (6.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 3.3ms | ActiveRecord: 6.9ms | Allocations: 825)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 03:52:14 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (7.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 7.0ms | Allocations: 832)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:53:27 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"werer", "user_id"=>nil, "movie_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"werer", "user_id"=>nil, "movie_id"=>nil}}
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1030)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:54:02 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"wwefe", "user_id"=>nil, "movie_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"wwefe", "user_id"=>nil, "movie_id"=>nil}}
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1028)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:54:31 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"gfhfgh", "user_id"=>nil, "movie_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"gfhfgh", "user_id"=>nil, "movie_id"=>nil}}
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1028)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 03:54:41 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"gfhfgh", "user_id"=>nil, "movie_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"gfhfgh", "user_id"=>nil, "movie_id"=>nil}}
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1039)
+
+
+Started POST "/reviews" for ::1 at 2020-10-02 04:05:33 -0600
+Processing by ReviewsController#create as JSON
+  Parameters: {"rating"=>nil, "comment"=>"bkhbhb", "user_id"=>nil, "movie_id"=>nil, "review"=>{"rating"=>nil, "comment"=>"bkhbhb", "user_id"=>nil, "movie_id"=>nil}}
+Completed 200 OK in 11ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 1028)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 04:06:04 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (14.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 36ms (Views: 20.6ms | ActiveRecord: 14.8ms | Allocations: 898)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 04:06:05 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 832)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 04:06:05 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (5.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 5.6ms | Allocations: 823)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 04:06:05 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 823)
+
+
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (4.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (3.5ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/reviews" for ::1 at 2020-10-02 04:12:02 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 2.9ms | ActiveRecord: 3.2ms | Allocations: 2503)
+
+
+Started GET "/reviews" for ::1 at 2020-10-02 04:12:04 -0600
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 842)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReview Load (4.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (9.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (131.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "movie_rating_app_development"[0m
+  [1m[35m (60.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "movie_rating_app_test"[0m
+  [1m[35m (116.8ms)[0m  [1m[35mCREATE DATABASE "movie_rating_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (50.0ms)[0m  [1m[35mCREATE DATABASE "movie_rating_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3628982044442296710)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200925194711)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925194711"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRatings (20200925194801)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" bigserial primary key, "rating" integer, "user_id" bigint, "movie_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings"  ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_ratings_on_movie_id" ON "ratings"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925194801"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovies (20200925194931)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "image_url" character varying, "description" character varying, "director" character varying, "rating" integer, "genre" character varying, "trailer" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925194931"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20200925195003)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "rating" integer, "comment" character varying, "user_id" bigint, "movie_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_movie_id" ON "reviews"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925195003"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20201002103539)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "movie_id" integer, "comment" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201002103539"]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-02 10:39:49.057930"], ["updated_at", "2020-10-02 10:39:49.057930"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3628982044442296710)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 23], ["comment", "hello"], ["created_at", "2020-10-02 10:45:05.035373"], ["updated_at", "2020-10-02 10:45:05.035373"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-10-02 04:45:38 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christophertorres/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christophertorres/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.0ms | Allocations: 315)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 1594)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 04:45:47 -0600
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 33ms (Views: 8.3ms | ActiveRecord: 21.4ms | Allocations: 4957)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 04:49:39 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"comment"=>"hi"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 982)
+
+
+  
+NoMethodError (undefined method `permit' for "hi":String):
+  
+app/controllers/comments_controller.rb:32:in `comment_params'
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2020-10-02 04:51:51 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"comment"=>"hi"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 969)
+
+
+  
+NoMethodError (undefined method `permit' for "hi":String):
+  
+app/controllers/comments_controller.rb:32:in `comment_params'
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2020-10-02 04:51:54 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"comment"=>"hi"}
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms | Allocations: 967)
+
+
+  
+NoMethodError (undefined method `permit' for "hi":String):
+  
+app/controllers/comments_controller.rb:32:in `comment_params'
+app/controllers/comments_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (32.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "movie_rating_app_development"[0m
+  [1m[35m (26.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "movie_rating_app_test"[0m
+  [1m[35m (135.4ms)[0m  [1m[35mCREATE DATABASE "movie_rating_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (74.9ms)[0m  [1m[35mCREATE DATABASE "movie_rating_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3628982044442296710)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200925194711)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925194711"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRatings (20200925194801)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" bigserial primary key, "rating" integer, "user_id" bigint, "movie_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings"  ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_ratings_on_movie_id" ON "ratings"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925194801"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovies (20200925194931)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "image_url" character varying, "description" character varying, "director" character varying, "rating" integer, "genre" character varying, "trailer" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925194931"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20200925195003)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "rating" integer, "comment" character varying, "user_id" bigint, "movie_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_movie_id" ON "reviews"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200925195003"]]
+  [1m[35m (28.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20201002103539)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "movie_id" integer, "text" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201002103539"]]
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-02 10:55:55.860047"], ["updated_at", "2020-10-02 10:55:55.860047"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3628982044442296710)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/comments" for ::1 at 2020-10-02 04:56:11 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.8ms | Allocations: 1645)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 04:57:30 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"hi", "comment"=>{"text"=>"hi"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "hi"], ["created_at", "2020-10-02 10:57:30.292760"], ["updated_at", "2020-10-02 10:57:30.292760"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 41ms (Views: 0.7ms | ActiveRecord: 32.5ms | Allocations: 5795)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 04:57:37 -0600
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 04:58:25 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"hello", "comment"=>{"text"=>"hello"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "hello"], ["created_at", "2020-10-02 10:58:25.246452"], ["updated_at", "2020-10-02 10:58:25.246452"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 38ms (Views: 0.5ms | ActiveRecord: 32.1ms | Allocations: 2432)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 04:58:30 -0600
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 994)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:02:03 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"hi", "comment"=>{"text"=>"hi"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "hi"], ["created_at", "2020-10-02 11:02:03.314190"], ["updated_at", "2020-10-02 11:02:03.314190"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 6.9ms | Allocations: 2432)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:02:48 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"er", "comment"=>{"text"=>"er"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (9.8ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "er"], ["created_at", "2020-10-02 11:02:48.468952"], ["updated_at", "2020-10-02 11:02:48.468952"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 15.2ms | Allocations: 2448)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:03:14 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"er", "comment"=>{"text"=>"er"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "er"], ["created_at", "2020-10-02 11:03:14.786834"], ["updated_at", "2020-10-02 11:03:14.786834"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 10.8ms | Allocations: 2430)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:04:25 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"ddfg", "comment"=>{"text"=>"ddfg"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (12.7ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "ddfg"], ["created_at", "2020-10-02 11:04:25.988687"], ["updated_at", "2020-10-02 11:04:25.988687"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 18.3ms | Allocations: 2432)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:04:55 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>438396, "text"=>"hello from the other side", "comment"=>{"movie_id"=>438396, "text"=>"hello from the other side"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (8.5ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 438396], ["text", "hello from the other side"], ["created_at", "2020-10-02 11:04:55.196896"], ["updated_at", "2020-10-02 11:04:55.196896"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 14.1ms | Allocations: 2462)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 05:05:02 -0600
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (10.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 10.0ms | Allocations: 1368)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:07:04 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>337401, "text"=>"well well well", "comment"=>{"movie_id"=>337401, "text"=>"well well well"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (39.0ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 337401], ["text", "well well well"], ["created_at", "2020-10-02 11:07:04.396141"], ["updated_at", "2020-10-02 11:07:04.396141"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 66ms (Views: 0.3ms | ActiveRecord: 58.0ms | Allocations: 2456)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:08:53 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>337401, "text"=>"yoyoyoy", "comment"=>{"movie_id"=>337401, "text"=>"yoyoyoy"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (6.4ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 337401], ["text", "yoyoyoy"], ["created_at", "2020-10-02 11:08:53.793363"], ["updated_at", "2020-10-02 11:08:53.793363"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 40ms (Views: 1.4ms | ActiveRecord: 16.7ms | Allocations: 2456)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:11:11 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>337401, "text"=>"grgr", "comment"=>{"movie_id"=>337401, "text"=>"grgr"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (13.5ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 337401], ["text", "grgr"], ["created_at", "2020-10-02 11:11:11.848160"], ["updated_at", "2020-10-02 11:11:11.848160"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 28ms (Views: 0.8ms | ActiveRecord: 19.4ms | Allocations: 2456)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:11:14 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>337401, "text"=>"", "comment"=>{"movie_id"=>337401, "text"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (13.5ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 337401], ["text", ""], ["created_at", "2020-10-02 11:11:14.927862"], ["updated_at", "2020-10-02 11:11:14.927862"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 25ms (Views: 1.0ms | ActiveRecord: 19.0ms | Allocations: 2456)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:12:52 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>718444, "text"=>"effee", "comment"=>{"movie_id"=>718444, "text"=>"effee"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 718444], ["text", "effee"], ["created_at", "2020-10-02 11:12:52.881364"], ["updated_at", "2020-10-02 11:12:52.881364"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 46ms (Views: 0.5ms | ActiveRecord: 33.8ms | Allocations: 2456)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 05:16:36 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>718444, "text"=>"efef", "comment"=>{"movie_id"=>718444, "text"=>"efef"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (16.1ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 718444], ["text", "efef"], ["created_at", "2020-10-02 11:16:36.175996"], ["updated_at", "2020-10-02 11:16:36.175996"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 45ms (Views: 1.9ms | ActiveRecord: 17.6ms | Allocations: 2456)
+
+

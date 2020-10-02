@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
+import AddCommentForm from './AddCommentForm';
 
 class Movie extends Component {
     state = {
-        movie: ""
+        movie: [],
+        // comments: []
     }
+
+    commentForm = (review) => { console.log(this.props.movie.id)
+        fetch("http://localhost:3000/comments", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify ({
+            "movie_id": this.props.movie.id,
+            "text": review.comment
+            
+          })
+        })
+        // .then(res => res.json())
+        // .then(() => this.fetchTransactions())
+        
+      }
 
     render() {
 
@@ -14,6 +34,7 @@ class Movie extends Component {
                 <div className="description-box">
                     <p>{this.props.movie.overview}</p>
                 </div>
+                <AddCommentForm commentForm={this.commentForm} movie={this.state.movie}/>
             </div>
         );
     }
