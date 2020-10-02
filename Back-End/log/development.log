@@ -2840,3 +2840,160 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 6527)
 
 
+Started GET "/comments" for ::1 at 2020-10-02 11:20:40 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (18.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 135ms (Views: 17.3ms | ActiveRecord: 116.3ms | Allocations: 10575)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 11:20:53 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>559, "text"=>"the black suit!", "comment"=>{"movie_id"=>559, "text"=>"the black suit!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 559], ["text", "the black suit!"], ["created_at", "2020-10-02 17:20:53.378958"], ["updated_at", "2020-10-02 17:20:53.378958"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 2670)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:20:53 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 6607)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:21:15 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 6623)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 11:21:22 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>324857, "text"=>"Miles Morales!", "comment"=>{"movie_id"=>324857, "text"=>"Miles Morales!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 324857], ["text", "Miles Morales!"], ["created_at", "2020-10-02 17:21:22.370100"], ["updated_at", "2020-10-02 17:21:22.370100"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2474)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:21:22 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 6685)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:21:40 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 6701)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:48:51 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (38.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 147ms (Views: 102.9ms | ActiveRecord: 38.6ms | Allocations: 6759)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 11:49:28 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>162, "text"=>"Scissors!!!", "comment"=>{"movie_id"=>162, "text"=>"Scissors!!!"}}
+  [1m[35m (13.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (31.7ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 162], ["text", "Scissors!!!"], ["created_at", "2020-10-02 17:49:28.426848"], ["updated_at", "2020-10-02 17:49:28.426848"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 78ms (Views: 0.7ms | ActiveRecord: 54.8ms | Allocations: 2457)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:49:28 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 6761)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 11:50:29 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>162, "text"=>"Chris - Scissors!!!", "comment"=>{"movie_id"=>162, "text"=>"Chris - Scissors!!!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 162], ["text", "Chris - Scissors!!!"], ["created_at", "2020-10-02 17:50:29.455244"], ["updated_at", "2020-10-02 17:50:29.455244"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 11.8ms | Allocations: 2458)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:50:29 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 6839)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 11:50:45 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>162, "text"=>"Chris - Scissors!!!", "comment"=>{"movie_id"=>162, "text"=>"Chris - Scissors!!!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 162], ["text", "Chris - Scissors!!!"], ["created_at", "2020-10-02 17:50:45.251126"], ["updated_at", "2020-10-02 17:50:45.251126"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 2456)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 11:50:45 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 6917)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 12:48:06 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (51.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 128ms (Views: 68.2ms | ActiveRecord: 51.7ms | Allocations: 6990)
+
+
+Started POST "/comments" for ::1 at 2020-10-02 12:48:21 -0600
+Processing by CommentsController#create as JSON
+  Parameters: {"movie_id"=>429617, "text"=>"Mysterio!", "comment"=>{"movie_id"=>429617, "text"=>"Mysterio!"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (8.9ms)[0m  [1m[32mINSERT INTO "comments" ("movie_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 429617], ["text", "Mysterio!"], ["created_at", "2020-10-02 18:48:21.232615"], ["updated_at", "2020-10-02 18:48:21.232615"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 38ms (Views: 0.4ms | ActiveRecord: 13.9ms | Allocations: 2460)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 12:48:21 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 4.9ms | Allocations: 6995)
+
+
+Started GET "/comments" for ::1 at 2020-10-02 12:48:37 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.4ms | Allocations: 6995)
+
+
