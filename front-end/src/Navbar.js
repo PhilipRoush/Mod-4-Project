@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,7 +8,12 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -63,31 +69,109 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   }));
+
+ 
   
 
-  export default function Navbar() {
+  const Navbar = (props) => {
+
     const classes = useStyles();
+    const [auth, setAuth] = React.useState(true);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+
+    
+  
+    let handleMenu = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    let handleClose = () => {
+      setAnchorEl(null);
+    };
+
+    let handleChange = (event) => {
+      props.movieSearch(event.target.value);
+      
+    }
+
+    let handleChangeDropDown = (event) => {
+      
+      setAuth(event.target.checked);
+    }
+
+    
   
     return (
+      
       <div className={classes.root}>
+         <FormGroup>
+        <FormControlLabel
+          control={<Switch checked={auth} onChange={handleChangeDropDown} aria-label="login switch" />}
+          label={auth ? 'Logout' : 'Login'}
+        />
+      </FormGroup>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
+            {/* <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="open drawer"
             >
               <MenuIcon />
-            </IconButton>
+                </IconButton> */}
+          <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                
+                <MenuIcon />
+              </IconButton> 
+              
             <Typography className={classes.title} variant="h6" noWrap>
-              Chris and Phils Movies
+              *Name Of App*
             </Typography>
+            {auth && (
+            <div>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open} 
+                onClose={handleClose}
+              >
+                <MenuItem component={Link} to="login" onClick={handleClose}>Login</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+            </div>
+            )}
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
+                onChange={handleChange}
                 placeholder="Search…"
                 classes={{
                   root: classes.inputRoot,
@@ -101,4 +185,6 @@ const useStyles = makeStyles((theme) => ({
       </div>
     );
   }
+
+  export default Navbar;
   

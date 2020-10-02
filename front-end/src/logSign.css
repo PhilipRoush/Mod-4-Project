@@ -1,10 +1,183 @@
+/* html,
 body {
-  background-image: url(bg.jpg);
-  background-size: cover;
-  background-position: center center;
-} 
+  background: #f7f7f7 !important;
+}
+
+.anchorjs-link {
+  position: absolute;
+  transition: margin-left 0.25s, color 0.25s, opacity 0.25s;
+  margin-left: -0.2em;
+  color: #777;
+  opacity: 0;
+}
+
+blockquote {
+  border-left: 3px solid rgba(34, 36, 38, 0.15);
+  margin-left: 0;
+  padding-left: 10px;
+  font-style: italic;
+}
+
+h1:hover > .anchorjs-link:not(:hover),
+h2:hover > .anchorjs-link:not(:hover),
+h3:hover > .anchorjs-link:not(:hover),
+h4:hover > .anchorjs-link:not(:hover),
+h5:hover > .anchorjs-link:not(:hover),
+h6:hover > .anchorjs-link:not(:hover) {
+  margin-left: 0;
+  opacity: 0.5;
+}
+
+.anchorjs-link:hover {
+  margin-left: 0;
+  color: cornflowerblue;
+  opacity: 1;
+}
+
+#introduction-page p {
+  font-size: 1.125em;
+  margin: 1.5em 0;
+}
+
+pre {
+  margin: 0;
+}
+
+code:not([class*='language-']) {
+  font-size: 87.5%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  white-space: pre;
+  display: inline-block;
+}
+
+code:not([class*='language-'])::before {
+  letter-spacing: -0.2em;
+  content: '\00a0';
+}
+
+code:not([class*='language-'])::after {
+  letter-spacing: -0.2em;
+  content: '\00a0';
+}
+
+.docs-example {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 2px #ccc;
+}
+
+.docs-example:hover {
+  box-shadow: 0 2px 8px #bbb;
+}
+
+.docs-example.active {
+  box-shadow: 0 8px 32px #aaa;
+}
+
+.docs-icon-set-column {
+  cursor: pointer;
+}
+
+.docs-icon-set-column .icon {
+  font-size: 2em;
+  color: #555;
+  transform: scale(1);
+  transition: opacity 0.2s, color 0.2s, transform 0.2s;
+}
+
+.docs-icon-set-column .name {
+  display: block;
+  margin: 1em 0;
+  color: #777;
+}
+
+.docs-icon-set-column:hover > .icon,
+.docs-icon-set-column:hover > .name {
+  color: #000;
+}
+
+.docs-icon-set-column:hover > .icon {
+  transform: scale(1.5);
+}
+
+#docs-carbonads {
+  background: #222;
+  box-shadow: 0 0 2em black;
+  border-top: 1px solid #444;
+  min-height: 150px;
+}
+
+#carbonads {
+  padding: 8px 8px;
+  line-height: 1.2;
+}
+
+#carbonads img {
+  display: block;
+  margin: 0 auto 4px auto;
+}
+
+.carbon-text {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.carbon-text:hover {
+  color: #ddd;
+}
+
+.carbon-poweredby {
+  margin-left: 8px;
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+.carbon-poweredby:hover {
+  color: #ddd;
+}
+
+/* --- */
+
+/* .token.deleted {
+  color: #e2777a;
+}
+
+.token.inserted {
+  color: #7ec699;
+} */ 
+
+
 
 .wrapper {
+  height: 560px;
+  width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   padding:0 2em;
+   border-radius: 5px;
+   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+   color: #ffffff;
+  background: linear-gradient(180deg, rgba(0,5,36,1) 0%, rgba(208,28,17,0.9037990196078431) 51%, rgba(254,253,253,0) 82%);
+}
+
+.sign-wrapper {
+  height: 560px;
+  width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   padding:0 2em;
+   border-radius: 5px;
+   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+   color: #ffffff;
+  background: linear-gradient(180deg, rgba(0,5,36,1) 0%, rgba(208,28,17,0.9037990196078431) 51%, rgba(254,253,253,0) 82%);
+}
+
+.log-wrapper {
   height: 560px;
   width: 500px;
    margin-left: auto;
@@ -33,15 +206,6 @@ form {
   flex-wrap: wrap;
 }
 
-h1 {
-  text-align: center;
-  font-size: 40px;
-  width: 100%;
-  color: rgb(246, 249, 249);
-  font-weight: lighter;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
 
 label {
   font-size: 1.5em;
@@ -70,35 +234,19 @@ input.error {
 }
 
 .errorMessage {
-  color: red;
+  color: rgba(255, 0, 0, 0);
   font-size: 0.75em;
   display: relative;
 }
 
-.firstName {
-  margin-right: 1%;
-}
 
-.lastName {
-  margin-left: 1%;
-}
 
-.firstName,
-.lastName,
-.email,
+
+.name,
 .password {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-}
-
-.firstName,
-.lastName {
-  width: 49%;
-}
-
-.name,
-.password {
   width: 100%;
 }
 

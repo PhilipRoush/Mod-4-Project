@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :comment
       t.references :user
       t.references :movie
+      
 
       t.timestamps
     end

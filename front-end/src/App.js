@@ -4,29 +4,41 @@ import './App.css';
 import './logSign.css'
 import MainPage from './MainPage'
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from 'react-router-dom'
 import axios from "axios";
+import Movie from './Movie'
+import { createBrowserHistory } from "history";
+
 // import Registration from './Registration'
 // import Login from './Login'
 
+const popularMoviesUrl = "https://api.themoviedb.org/3/movie/popular?api_key=d5b1a0507451a686fe3ad617dac6002e&language=en-US&page=1"
 
-export default class App extends Component {
+const history = createBrowserHistory();
+
+class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      loggedInStatus: "NOT_LOGGED_IN",
-      user: {}
+      loggedInStatus: 'NOT_LOGGED_IN',
+      user: {},
+      popularPics: [],
+      movie: []
     };
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
+
+
+
   checkLoginStatus() {
     axios
       .get("http://localhost:3001/logged_in", { withCredentials: true })
       .then(response => {
+        console.log("logged in?", response)
         if (
           response.data.logged_in &&
           this.state.loggedInStatus === "NOT_LOGGED_IN"
@@ -40,7 +52,7 @@ export default class App extends Component {
           (this.state.loggedInStatus === "LOGGED_IN")
         ) {
           this.setState({
-            loggedInStatus: "NOT_LOGGED_IN",
+            loggedInStatus: "Welcome! Login or Sign-Up to further enjoy!",
             user: {}
           });
         }
@@ -56,28 +68,41 @@ export default class App extends Component {
 
   handleLogout() {
     this.setState({
-      loggedInStatus: "NOT_LOGGED_IN",
+      loggedInStatus: "Welcome! Login or Sign-Up to further enjoy!",
       user: {}
     });
   }
 
   handleLogin(data) {
     this.setState({
-      loggedInStatus: "LOGGED_IN",
+      loggedInStatus: `Welcome, ${this.state.user}`,
       user: data.user
     });
   }
 
-  
+  componentWillMount() {
+    this.fetchHeaderPopular()
+  }
+
+  fetchHeaderPopular = () => {
+    fetch(popularMoviesUrl)
+      .then(res => res.json())
+      .then(popularMovies => this.setState({ popularPics: popularMovies.results }))
+  }
+
+  showCard = (movie) => {
+    this.setState({movie: movie})
+    history.push('/movie')
+  }
   
   render() {
     return (
-      <div className="app">
-        <BrowserRouter>
+      <div className="App">
+        <Router history={history}>
           <Switch>
             <Route
               exact
-              path={"/"}
+              path={"/login"}
               render={props => (
                 <Home
                   {...props}
@@ -87,38 +112,28 @@ export default class App extends Component {
                 />
               )}
             />
-             {/* <Route
-              exact path='/login'
-              render={props => (
-                <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
-              )}
-            />
+           <Route path="/movie">
+              <Movie movie={this.state.movie}/>
+            </Route>
+              
             <Route
-              exact path='/signup'
+              path={"/"}
               render={props => (
-                <Registration {...props}
-                 handleLogin={this.handleLogin}
-                  loggedInStatus={this.state.isLoggedIn} />
-              )}
-            /> */}
-            <Route
-              exact
-              path={"/mainpage"}
-              render={props => (
-                <MainPage
-                  {...props}
+                <MainPage {...props}
                   loggedInStatus={this.state.loggedInStatus}
+                  popularPics={this.state.popularPics}
+                  showCard={this.showCard}
                 />
               )}
             />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
 }
   
-  
+  export default App;
 //   return (
 //     <div className="App">
 //       <MainPage />

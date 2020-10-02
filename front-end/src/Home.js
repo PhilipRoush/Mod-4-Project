@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import axios from "axios";
 // import EpicMenu from './EpicMenu'
 // import Registration from "./Registration";
-import Login from "./Login"
-import Registration from "./Registration";
+import Login from "./auth/Login"
+import Registration from "./auth/Registration";
+
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -37,7 +39,7 @@ export default class Home extends Component {
       <div>
         
         
-        {/* <button onClick={() => this.handleLogoutClick()}>Logout</button> */}
+        <button onClick={() => this.handleLogoutClick()}>Logout</button>
         {/* <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
         <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
