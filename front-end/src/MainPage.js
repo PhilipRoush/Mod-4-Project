@@ -53,9 +53,9 @@ class MainPage extends Component {
             <div className="MainPage-Wrapper">
                 <Navbar movieSearch={this.movieSearch}/><br></br>
                 <HeaderContainer popularMovies={this.props.popularPics}/>
-                <h4>Search</h4>
-                <SearchResultBar searchMovies={this.state.searchMovies} />
-                <h4>Trending</h4>
+                <h2>The World Of Movies Is Yours ...</h2> <h2 className="search-text">Search</h2>
+                <SearchResultBar showCard={this.props.showCard} searchMovies={this.state.searchMovies} />
+                <h2>Trending</h2>
                 <PopularMoviesContainer showCard={this.props.showCard} popularMovies={this.state.popularMovies} />
                 <FavoriteBar />
                 <Footer />
