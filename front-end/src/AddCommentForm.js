@@ -24,7 +24,7 @@ class AddCommentForm extends Component {
                     <div className="inline fields">
                         <input onChange={this.handleChange} type="text" name="comment" placeholder="...add comment" />
                     </div>
-                    <button className="ui button" type="submit"> Add Comment </button>
+                    <button className="comment-button" type="submit"> press me </button>
                 </form>
             </div>
         );

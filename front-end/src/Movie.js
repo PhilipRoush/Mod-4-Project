@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import AddCommentForm from './AddCommentForm';
+import CommentsContainer from './containers/CommentsContainer'
+
+
 
 class Movie extends Component {
     state = {
         movie: [],
-        // comments: []
+        comments: []
+    }
+
+    componentDidMount() {
+        this.fetchComments()
+    }
+
+    fetchComments = () => {
+        fetch("http://localhost:3000/comments")
+        .then(res => res.json())
+        .then(comments => this.setState({comments: comments.filter(comment => comment.movie_id == this.props.movie.id)}))
     }
 
     commentForm = (review) => { console.log(this.props.movie.id)
@@ -20,8 +33,8 @@ class Movie extends Component {
             
           })
         })
-        // .then(res => res.json())
-        // .then(() => this.fetchTransactions())
+        .then(res => res.json())
+        .then(() => this.fetchComments())
         
       }
 
@@ -34,6 +47,7 @@ class Movie extends Component {
                 <div className="description-box">
                     <p>{this.props.movie.overview}</p>
                 </div>
+                <CommentsContainer comments={this.state.comments}/>
                 <AddCommentForm commentForm={this.commentForm} movie={this.state.movie}/>
             </div>
         );

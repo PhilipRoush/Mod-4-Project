@@ -3,6 +3,19 @@ body {
   background: black;
 }
 
+@keyframes animatedgradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
 @keyframes fadeIn {
   0% {
     opacity:0;
@@ -191,5 +204,62 @@ h2 {
   position: absolute;
   bottom: 50px;
   right: 30px;
+}
+
+.comment-cards {
+  /* position: absolute;
+  top: 50px;
+  right: 100px; */
+  right: -120px;
+  top: -50px;
+  max-width: 150px;
+  max-height: 500px;
+  --borderWidth: 3px;
+  background: #1D1F20;
+  position: relative;
+  border-radius: var(--borderWidth);
+  display:inline-block;
+  /* overflow-x: auto; */
+}
+
+.comment-cards:after {
+  content: '';
+  position: absolute;
+  
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+  
+}
+
+.comment-button {
+  display: inline-block;
+  padding: 5px 3px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ac0000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(129, 1, 1);
+}
+
+.comment-button:hover {
+  background-color: #7e0703
+}
+
+.comment-button:active {
+  background-color: #bb0802;
+  box-shadow: 0 5px rgb(87, 1, 1);
+  transform: translateY(4px);
 }
 
